@@ -400,7 +400,7 @@ TEST(PiezasTest, incomplete_game)
 		game = true;
 	}
 
-	EXPECT_EQ(game, true;
+	EXPECT_EQ(game, true);
 }
 
 TEST(PiezasTest, incomplete_game2)
@@ -416,5 +416,5 @@ TEST(PiezasTest, incomplete_game2)
 		game = true;
 	}
 
-	EXPECT_EQ(game, true;
+	EXPECT_EQ(game, true);
 }
