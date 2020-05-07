@@ -81,20 +81,20 @@ Piece Piezas::dropPiece(int column)
             return Invalid;
 
         //No blank pieces
-        for (auto i = 0; i <= BOARD_ROWS; i++)
+        for (auto i = 0; i < BOARD_ROWS; i++)
         {
-            if (board[column][i] != Blank)
+            if (board[i][column] != Blank)
             {
                 return Blank;
             }
         }
 
         //set current player piece
-        for (auto i = 0; i <= BOARD_ROWS; i++)
+        for (auto i = 0; i < BOARD_ROWS; i++)
         {
-            if (board[column][i] == Blank)
+            if (board[i][column] == Blank)
             {
-                board[column][i] = X;
+                board[i][column] = X;
                 return X;
             }
         }

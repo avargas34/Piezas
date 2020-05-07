@@ -39,7 +39,7 @@ TEST(PiezasTest, blank_board_check)
 
 	EXPECT_EQ(blank_board, true);
 }
-/**
+
 TEST(PiezasTest, valid_location)
 {
 	Piezas connect4;
@@ -135,7 +135,6 @@ TEST(PiezasTest, invalid_location3)
 
 	EXPECT_EQ(board_piece, true);
 }
-**/
 
 TEST(PiezasTest, drop_1_game_piece1)
 {
