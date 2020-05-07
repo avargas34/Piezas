@@ -277,11 +277,75 @@ TEST(PiezasTest, invalid_column2)
 	Piezas connect4;
 	bool invalid_piece = false;
 
+	connect4.dropPiece(-1);
+
+	if (connect4.dropPiece(0) == Invalid)
+	{
+		invalid_piece = true;
+	}
+
+	EXPECT_EQ(invalid_piece, true);
+}
+
+TEST(PiezasTest, invalid_column3)
+{
+	Piezas connect4;
+	bool invalid_piece = false;
+
+	connect4.dropPiece(99);
+
+	if (connect4.dropPiece(0) == Invalid)
+	{
+		invalid_piece = true;
+	}
+
+	EXPECT_EQ(invalid_piece, true);
+}
+
+TEST(PiezasTest, invalid_column4)
+{
+	Piezas connect4;
+	bool invalid_piece = false;
+
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
 	if (connect4.dropPiece(3) == Blank)
+	{
+		invalid_piece = true;
+	}
+
+	EXPECT_EQ(invalid_piece, true);
+}
+
+TEST(PiezasTest, invalid_column5)
+{
+	Piezas connect4;
+	bool invalid_piece = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+
+	if (connect4.dropPiece(0) == Blank)
+	{
+		invalid_piece = true;
+	}
+
+	EXPECT_EQ(invalid_piece, true);
+}
+
+TEST(PiezasTest, invalid_column6)
+{
+	Piezas connect4;
+	bool invalid_piece = false;
+
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+
+	if (connect4.dropPiece(2) == Blank)
 	{
 		invalid_piece = true;
 	}
