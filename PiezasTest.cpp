@@ -364,7 +364,7 @@ TEST(PiezasTest, correct_turn)
 
 }
 
-TEST(PiezasTest, correct_turn2)
+TEST(PiezasTest, correct_turn1)
 {
 	Piezas connect4;
 
@@ -374,7 +374,7 @@ TEST(PiezasTest, correct_turn2)
 
 }
 
-TEST(PiezasTest, correct_turn3)
+TEST(PiezasTest, correct_turn2)
 {
 	Piezas connect4;
 
