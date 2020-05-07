@@ -21,13 +21,14 @@ TEST(PiezasTest, sanityCheck)
 
 TEST(PiezasTest, blank_board_check)
 {
+	Piezas connect4;
 	bool blank_board = true;
 
 	for (auto i = 0; i < BOARD_ROWS; i++)
     {
         for (auto i2 = 0; i2 < BOARD_COLS; i2++)
         {
-            if(board[i][i2] != Blank)
+            if(connect4[i][i2] != Blank)
 			{
 				blank_board = false;
 				break;
