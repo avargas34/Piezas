@@ -262,9 +262,7 @@ TEST(PiezasTest, invalid_column)
 	Piezas connect4;
 	bool invalid_piece = false;
 
-	connect4.dropPiece(0);
-	connect4.dropPiece(0);
-	connect4.dropPiece(0);
+	connect4.dropPiece(5);
 
 	if (connect4.dropPiece(0) == Invalid)
 	{
@@ -283,7 +281,7 @@ TEST(PiezasTest, invalid_column2)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if (connect4.dropPiece(0) == Invalid)
+	if (connect4.dropPiece(0) == Blank)
 	{
 		invalid_piece = true;
 	}
