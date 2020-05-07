@@ -418,3 +418,22 @@ TEST(PiezasTest, incomplete_game2)
 
 	EXPECT_EQ(game, true);
 }
+
+TEST(PiezasTest, incomplete_game3)
+{
+	Piezas connect4;
+	char inval = '?';
+	bool game = false;
+
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+
+	if(connect4.gameState() == inval);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
