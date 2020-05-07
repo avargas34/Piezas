@@ -361,7 +361,7 @@ TEST(PiezasTest, correct_turn)
 	Piezas connect4;
 	bool correct_player = false;
 
-	if (connect4.turn == X)
+	if (turn == X)
 	{
 		correct_player = true;
 	}
@@ -375,7 +375,7 @@ TEST(PiezasTest, correct_turn2)
 	bool correct_player = false;
 	connect4.dropPiece(0);
 
-	if (connect4.turn == O)
+	if (turn == O)
 	{
 		correct_player = true;
 	}
@@ -391,7 +391,7 @@ TEST(PiezasTest, correct_turn3)
 	connect4.dropPiece(0);
 	connect4.dropPiece(1);
 
-	if (connect4.turn == X)
+	if (turn == X)
 	{
 		correct_player = true;
 	}
@@ -407,7 +407,7 @@ TEST(PiezasTest, correct_turn3)
 	connect4.dropPiece(0);
 	connect4.dropPiece(6);
 
-	if (connect4.turn == X)
+	if (turn == X)
 	{
 		correct_player = true;
 	}
