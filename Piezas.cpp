@@ -44,6 +44,21 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+    board.resize(BOARD_ROWS);
+    for (auto i = 0; i < board.size(); i++)
+    {
+        board[i].resize(BOARD_COLS);
+    }
+
+    for (auto i = 0; i < BOARD_ROWS; i++)
+    {
+        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        {
+            board[i][i2] = Blank;
+        }
+    }
+
+    turn = X;
 }
 
 /**
@@ -56,6 +71,12 @@ void Piezas::reset()
 **/
 Piece Piezas::dropPiece(int column)
 {
+    if(turn == X)
+    {}
+
+    if(turn == O)
+    {}
+
     return Blank;
 }
 
@@ -65,7 +86,14 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+    if (row > BOARD_ROWS || row < 0 || column > BOARD_COLS || column < 0)
+        return Invalid;
+
+    if (board[row][column] == Blank)
+        return Blank;
+
+    else
+        return board[row][column]; 
 }
 
 /**
