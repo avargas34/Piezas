@@ -28,7 +28,7 @@ TEST(PiezasTest, blank_board_check)
     {
         for (auto i2 = 0; i2 < BOARD_COLS; i2++)
         {
-            if(connect4.pieceAt != Blank)
+            if(connect4.pieceAt != ' ')
 			{
 				blank_board = false;
 				break;
