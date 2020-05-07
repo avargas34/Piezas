@@ -102,6 +102,31 @@ Piece Piezas::dropPiece(int column)
 
     if (turn == O)
     {
+        //set turn to next player
+        turn = X;
+
+        //invalid location
+        if (column > 3 || column < 0)
+            return Invalid;
+
+        //No blank pieces
+        for (auto i = 0; i < BOARD_ROWS; i++)
+        {
+            if (board[i][column] != Blank)
+            {
+                return Blank;
+            }
+        }
+
+        //set current player piece
+        for (auto i = 0; i < BOARD_ROWS; i++)
+        {
+            if (board[i][column] == Blank)
+            {
+                board[i][column] = O;
+                return O;
+            }
+        }
     }
 }
 
