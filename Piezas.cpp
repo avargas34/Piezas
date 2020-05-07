@@ -206,9 +206,6 @@ Piece Piezas::gameState()
                 {
                     adjOhori++;
                 }
-
-                else
-                    return;
             }
         }
 
@@ -234,9 +231,6 @@ Piece Piezas::gameState()
                 {
                     adjOcol++;
                 }
-
-                else
-                    return;
             }
         }
 
