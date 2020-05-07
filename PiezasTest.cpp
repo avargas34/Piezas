@@ -263,9 +263,7 @@ TEST(PiezasTest, invalid_column)
 	char inval = '?';
 	bool invalid_piece = false;
 
-	connect4.dropPiece(5);
-
-	if (connect4.dropPiece(0) == inval)
+	if (connect4.dropPiece(5) == inval)
 	{
 		invalid_piece = true;
 	}
@@ -279,9 +277,7 @@ TEST(PiezasTest, invalid_column2)
 	char inval = '?';
 	bool invalid_piece = false;
 
-	connect4.dropPiece(-1);
-
-	if (connect4.dropPiece(0) == inval)
+	if (connect4.dropPiece(-1) == inval)
 	{
 		invalid_piece = true;
 	}
@@ -295,9 +291,7 @@ TEST(PiezasTest, invalid_column3)
 	char inval = '?';
 	bool invalid_piece = false;
 
-	connect4.dropPiece(99);
-
-	if (connect4.dropPiece(0) == inval)
+	if (connect4.dropPiece(99) == inval)
 	{
 		invalid_piece = true;
 	}
@@ -392,5 +386,5 @@ TEST(PiezasTest, correct_turn3)
 	connect4.dropPiece(3);
 	connect4.dropPiece(2);
 
-	EXPECT_EQ(O, connect4.dropPiece(6));
+	EXPECT_EQ(O, connect4.dropPiece(1));
 }
