@@ -292,7 +292,7 @@ TEST(PiezasTest, invalid_column3)
 	bool invalid_piece = false;
 
 	connect4.dropPiece(1);
-	
+
 	if (connect4.dropPiece(99) == inval)
 	{
 		invalid_piece = true;
@@ -357,7 +357,6 @@ TEST(PiezasTest, correct_turn)
 	Piezas connect4;
 
 	EXPECT_EQ(X, connect4.dropPiece(0));
-
 }
 
 TEST(PiezasTest, correct_turn1)
@@ -367,7 +366,6 @@ TEST(PiezasTest, correct_turn1)
 	connect4.dropPiece(1);
 
 	EXPECT_EQ(O, connect4.dropPiece(3));
-
 }
 
 TEST(PiezasTest, correct_turn2)
@@ -383,10 +381,40 @@ TEST(PiezasTest, correct_turn2)
 TEST(PiezasTest, correct_turn3)
 {
 	Piezas connect4;
-	
+
 	connect4.dropPiece(0);
 	connect4.dropPiece(3);
 	connect4.dropPiece(2);
 
 	EXPECT_EQ(O, connect4.dropPiece(1));
+}
+
+TEST(PiezasTest, incomplete_game)
+{
+	Piezas connect4;
+	char inval = '?';
+	bool game = false;
+
+	if(connect4.gameState() == inval);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true;
+}
+
+TEST(PiezasTest, incomplete_game2)
+{
+	Piezas connect4;
+	char inval = '?';
+	bool game = false;
+
+	connect4.dropPiece(2);
+
+	if(connect4.gameState() == inval);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true;
 }

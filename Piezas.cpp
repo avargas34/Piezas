@@ -159,5 +159,31 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+    bool full = true;
+
+    //Check if board is empty
+    for (auto i = 0; i < BOARD_ROWS; i++)
+	{
+		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+		{
+			if (pieceAt(i, i2) == Blank)
+			{
+				full = true;
+			}
+		}
+	}
+
+    //If game not finished
+    if(full == false)
+    {
+        return Invalid;
+    }
+
+    else
+    {   
+        return Blank;
+    }
+    //return who won when game board when game board full
+    //which player had most adjacent pieces in a single line hori and vert
+    //same numer then its a tie, return blank
 }
