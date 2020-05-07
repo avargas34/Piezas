@@ -173,8 +173,8 @@ Piece Piezas::gameState()
         }
     }
 
-    //If game not finished
-    if (count >= 12)
+    //Checking if a full game is complete
+    if (count >= 13)
     {
         int curX = 0;
         int curO = 0;
@@ -208,7 +208,7 @@ Piece Piezas::gameState()
                 }
 
                 else
-                    return Blank;
+                    return;
             }
         }
 
@@ -236,7 +236,7 @@ Piece Piezas::gameState()
                 }
 
                 else
-                    return Blank;
+                    return;
             }
         }
 
