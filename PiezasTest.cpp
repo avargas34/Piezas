@@ -25,9 +25,9 @@ TEST(PiezasTest, blank_board_check)
 	char blank = ' ';
 	bool blank_board = true;
 
-	for (auto i = 0; i < BOARD_ROWS; i++)
+	for (auto i = 0; i <= BOARD_ROWS; i++)
 	{
-		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+		for (auto i2 = 0; i2 <= BOARD_COLS; i2++)
 		{
 			if (connect4.pieceAt(i, i2) != blank)
 			{
@@ -144,9 +144,9 @@ TEST(PiezasTest, drop_1_game_piece1)
 
 	connect4.dropPiece(2);
 
-	for (auto i = 0; i < BOARD_ROWS; i++)
+	for (auto i = 0; i <= BOARD_ROWS; i++)
 	{
-		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+		for (auto i2 = 0; i2 <= BOARD_COLS; i2++)
 		{
 			if (connect4.pieceAt(i, i2) != blank)
 			{
@@ -167,9 +167,9 @@ TEST(PiezasTest, drop_1_game_piece2)
 
 	connect4.dropPiece(0);
 
-	for (auto i = 0; i < BOARD_ROWS; i++)
+	for (auto i = 0; i <= BOARD_ROWS; i++)
 	{
-		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+		for (auto i2 = 0; i2 <= BOARD_COLS; i2++)
 		{
 			if (connect4.pieceAt(i, i2) != blank)
 			{
