@@ -71,13 +71,38 @@ void Piezas::reset()
 **/
 Piece Piezas::dropPiece(int column)
 {
-    if(turn == X)
-    {}
+    if (turn == X)
+    {
+        //set turn to next player
+        turn = O;
 
-    if(turn == O)
-    {}
+        //invalid location
+        if (column > 3 || column < 0)
+            return Invalid;
 
-    return Blank;
+        //No blank pieces
+        for (auto i = 0; i < BOARD_ROWS; i++)
+        {
+            if (board[column][i] != Blank)
+            {
+                return Blank;
+            }
+        }
+
+        //set current player piece
+        for (auto i = 0; i < BOARD_ROWS; i++)
+        {
+            if (board[column][i] == Blank)
+            {
+                board[column][i] = X;
+                return X;
+            }
+        }
+    }
+
+    if (turn == O)
+    {
+    }
 }
 
 /**
@@ -90,7 +115,7 @@ Piece Piezas::pieceAt(int row, int column)
         return Invalid;
 
     else
-        return board[row][column]; 
+        return board[row][column];
 }
 
 /**
