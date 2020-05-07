@@ -15,13 +15,27 @@
  * dropped in column 2 should take [1,2].
 **/
 
-
 /**
  * Constructor sets an empty board (default 3 rows, 4 columns) and 
  * specifies it is X's turn first
 **/
 Piezas::Piezas()
 {
+    board.resize(BOARD_ROWS);
+    for (auto i = 0; i < board.size(); i++)
+    {
+        board[i].resize(BOARD_COLS);
+    }
+
+    for (auto i = 0; i < BOARD_ROWS; i++)
+    {
+        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        {
+            board[i][i2] = Blank;
+        }
+    }
+
+    turn = X;
 }
 
 /**
@@ -39,7 +53,7 @@ void Piezas::reset()
  * In that case, placePiece returns Piece Blank value 
  * Out of bounds coordinates return the Piece Invalid value
  * Trying to drop a piece where it cannot be placed loses the player's turn
-**/ 
+**/
 Piece Piezas::dropPiece(int column)
 {
     return Blank;

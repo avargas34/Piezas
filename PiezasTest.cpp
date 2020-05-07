@@ -18,3 +18,22 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+
+TEST(PiezasTest, blank_board_check)
+{
+	bool blank_board = true;
+
+	for (auto i = 0; i < BOARD_ROWS; i++)
+    {
+        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        {
+            if(board[i][i2] != Blank)
+			{
+				blank_board = false;
+				break;
+			}
+        }
+    }
+
+	EXPECT_EQ(blank_board, true);
+}
