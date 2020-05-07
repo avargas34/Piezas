@@ -291,6 +291,8 @@ TEST(PiezasTest, invalid_column3)
 	char inval = '?';
 	bool invalid_piece = false;
 
+	connect4.dropPiece(1);
+	
 	if (connect4.dropPiece(99) == inval)
 	{
 		invalid_piece = true;
