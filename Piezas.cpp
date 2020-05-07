@@ -174,7 +174,7 @@ Piece Piezas::gameState()
     }
 
     //If game not finished
-    if (full < 11)
+    if (full < 12)
     {
         return Invalid;
     }
