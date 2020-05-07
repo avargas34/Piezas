@@ -182,9 +182,12 @@ Piece Piezas::gameState()
     //A complete game has been successful
     else
     {
-        /*
         int curX = 0;
         int curO = 0;
+        int curXhori = 0;
+        int curOhori = 0;
+        int curXcol = 0;
+        int curOcol = 0;
         int adjXhori = 0;
         int adjOhori = 0;
         int adjXcol = 0;
@@ -192,15 +195,65 @@ Piece Piezas::gameState()
 
         for (auto i = 0; i < BOARD_ROWS - 1; i++)
         {
-            if(pieceAt(i,0))
-        }
+            curXhori = adjXhori;
+            curOhori = adjOhori;
 
-        for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
-        {
-            if (pieceAt(i, i2) ==)
+            adjXhori = 0;
+            adjOhori = 0;
+
+            for (auto i2 = 0; i2 < BOARD_COLS; i2++)
             {
+                if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'X')
+                {
+                    adjXhori++;
+                }
+
+                else if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'O')
+                {
+                    adjOhori++;
+                }
+
+                else
+                    return Blank;
             }
         }
+
+        for (auto i = 0; i < BOARD_ROWS; i++)
+        {
+            if (curXcol < adjXcol)
+                curXcol = adjXcol;
+
+            else if (curOcol < adjOcol)
+                curOcol = adjOcol;
+
+            adjXcol = 0;
+            adjOcol = 0;
+
+            for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
+            {
+                if (board[i][i2] == board[i][i2 + 1] && board[i][i2] == 'X')
+                {
+                    adjXcol++;
+                }
+
+                else if (board[i][i2] == board[i][i2 + 1] && board[i][i2] == 'O')
+                {
+                    adjOcol++;
+                }
+
+                else
+                    return Blank;
+            }
+        }
+
+        curX = curXhori;
+        curO = curOhori;
+
+        if (curX < curXcol)
+            curX = curXcol;
+
+        if (curO < curOcol)
+            curO = curOcol;
 
         if (curX == curO)
             return Blank;
@@ -210,6 +263,5 @@ Piece Piezas::gameState()
 
         else
             return O;
-            */
     }
 }
