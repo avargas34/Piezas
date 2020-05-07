@@ -359,58 +359,38 @@ TEST(PiezasTest, invalid_column6)
 TEST(PiezasTest, correct_turn)
 {
 	Piezas connect4;
-	bool correct_player = false;
 
-	if (turn == X)
-	{
-		correct_player = true;
-	}
+	EXPECT_EQ(X, connect4.dropPiece(0));
 
-	EXPECT_EQ(correct_player, true);
 }
 
 TEST(PiezasTest, correct_turn2)
 {
 	Piezas connect4;
-	bool correct_player = false;
-	connect4.dropPiece(0);
 
-	if (turn == O)
-	{
-		correct_player = true;
-	}
+	connect4.dropPiece(1);
 
-	EXPECT_EQ(correct_player, true);
+	EXPECT_EQ(O, connect4.dropPiece(3));
+
 }
 
 TEST(PiezasTest, correct_turn3)
 {
 	Piezas connect4;
-	bool correct_player = false;
 
 	connect4.dropPiece(0);
 	connect4.dropPiece(1);
 
-	if (turn == X)
-	{
-		correct_player = true;
-	}
-
-	EXPECT_EQ(correct_player, true);
+	EXPECT_EQ(X, connect4.dropPiece(2));
 }
 
 TEST(PiezasTest, correct_turn3)
 {
 	Piezas connect4;
-	bool correct_player = false;
 	
 	connect4.dropPiece(0);
-	connect4.dropPiece(6);
+	connect4.dropPiece(3);
+	connect4.dropPiece(2);
 
-	if (turn == X)
-	{
-		correct_player = true;
-	}
-
-	EXPECT_EQ(correct_player, true);
+	EXPECT_EQ(O, connect4.dropPiece(6));
 }
