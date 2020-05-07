@@ -256,3 +256,37 @@ TEST(PiezasTest, testing_reset2)
 
 	EXPECT_EQ(blank_board, true);
 }
+
+TEST(PiezasTest, invalid_column)
+{
+	Piezas connect4;
+	bool invalid_piece = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+
+	if (connect4.dropPiece(0) == Invalid)
+	{
+		invalid_piece = true;
+	}
+
+	EXPECT_EQ(invalid_piece, true);
+}
+
+TEST(PiezasTest, invalid_column2)
+{
+	Piezas connect4;
+	bool invalid_piece = false;
+
+	connect4.dropPiece(3);
+	connect4.dropPiece(3);
+	connect4.dropPiece(3);
+
+	if (connect4.dropPiece(0) == Invalid)
+	{
+		invalid_piece = true;
+	}
+
+	EXPECT_EQ(invalid_piece, true);
+}
