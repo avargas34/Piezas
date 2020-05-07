@@ -163,27 +163,53 @@ Piece Piezas::gameState()
 
     //Check if board is empty
     for (auto i = 0; i < BOARD_ROWS; i++)
-	{
-		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
-		{
-			if (pieceAt(i, i2) == Blank)
-			{
-				full = true;
-			}
-		}
-	}
+    {
+        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        {
+            if (pieceAt(i, i2) == Blank)
+            {
+                full = false;
+            }
+        }
+    }
 
     //If game not finished
-    if(full == false)
+    if (full == false)
     {
         return Invalid;
     }
 
+    //A complete game has been successful
     else
-    {   
-        return Blank;
+    {
+        /*
+        int curX = 0;
+        int curO = 0;
+        int adjXhori = 0;
+        int adjOhori = 0;
+        int adjXcol = 0;
+        int adjOcol = 0;
+
+        for (auto i = 0; i < BOARD_ROWS - 1; i++)
+        {
+            if(pieceAt(i,0))
+        }
+
+        for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
+        {
+            if (pieceAt(i, i2) ==)
+            {
+            }
+        }
+
+        if (curX == curO)
+            return Blank;
+
+        else if (curX > curO)
+            return X;
+
+        else
+            return O;
+            */
     }
-    //return who won when game board when game board full
-    //which player had most adjacent pieces in a single line hori and vert
-    //same numer then its a tie, return blank
 }
