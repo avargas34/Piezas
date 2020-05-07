@@ -27,9 +27,9 @@ Piezas::Piezas()
         board[i].resize(BOARD_COLS);
     }
 
-    for (auto i = 0; i < BOARD_ROWS; i++)
+    for (auto i = 0; i <= BOARD_ROWS; i++)
     {
-        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        for (auto i2 = 0; i2 <= BOARD_COLS; i2++)
         {
             board[i][i2] = Blank;
         }
@@ -50,9 +50,9 @@ void Piezas::reset()
         board[i].resize(BOARD_COLS);
     }
 
-    for (auto i = 0; i < BOARD_ROWS; i++)
+    for (auto i = 0; i <= BOARD_ROWS; i++)
     {
-        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        for (auto i2 = 0; i2 <= BOARD_COLS; i2++)
         {
             board[i][i2] = Blank;
         }
@@ -81,7 +81,7 @@ Piece Piezas::dropPiece(int column)
             return Invalid;
 
         //No blank pieces
-        for (auto i = 0; i < BOARD_ROWS; i++)
+        for (auto i = 0; i <= BOARD_ROWS; i++)
         {
             if (board[column][i] != Blank)
             {
@@ -90,7 +90,7 @@ Piece Piezas::dropPiece(int column)
         }
 
         //set current player piece
-        for (auto i = 0; i < BOARD_ROWS; i++)
+        for (auto i = 0; i <= BOARD_ROWS; i++)
         {
             if (board[column][i] == Blank)
             {
