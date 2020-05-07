@@ -464,3 +464,57 @@ TEST(PiezasTest, tie_game)
 
 	EXPECT_EQ(game, true);
 }
+
+TEST(PiezasTest, tie_game2)
+{
+	Piezas connect4;
+	char tie = ' ';
+	bool game = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+
+	if(connect4.gameState() == tie);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
+
+TEST(PiezasTest, tie_game3)
+{
+	Piezas connect4;
+	char tie = ' ';
+	bool game = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+	connect4.dropPiece(3);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+
+	if(connect4.gameState() == tie);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
