@@ -53,7 +53,7 @@ TEST(PiezasTest, valid_location)
 		board_piece = true;
 	}
 
-	EXPECT_EQ(blank_board, true);
+	EXPECT_EQ(board_piece, true);
 }
 
 TEST(PiezasTest, valid_location2)
@@ -69,7 +69,7 @@ TEST(PiezasTest, valid_location2)
 		board_piece = true;
 	}
 
-	EXPECT_EQ(blank_board, true);
+	EXPECT_EQ(board_piece, true);
 }
 
 TEST(PiezasTest, valid_location3)
@@ -85,7 +85,7 @@ TEST(PiezasTest, valid_location3)
 		board_piece = true;
 	}
 
-	EXPECT_EQ(blank_board, true);
+	EXPECT_EQ(board_piece, true);
 }
 
 TEST(PiezasTest, invalid_location)
@@ -101,7 +101,7 @@ TEST(PiezasTest, invalid_location)
 		board_piece = true;
 	}
 
-	EXPECT_EQ(blank_board, true);
+	EXPECT_EQ(board_piece, true);
 }
 
 TEST(PiezasTest, invalid_location2)
@@ -117,7 +117,7 @@ TEST(PiezasTest, invalid_location2)
 		board_piece = true;
 	}
 
-	EXPECT_EQ(blank_board, true);
+	EXPECT_EQ(board_piece, true);
 }
 
 TEST(PiezasTest, invalid_location3)
@@ -133,5 +133,5 @@ TEST(PiezasTest, invalid_location3)
 		board_piece = true;
 	}
 
-	EXPECT_EQ(blank_board, true);
+	EXPECT_EQ(board_piece, true);
 }
