@@ -6,7 +6,7 @@
  * fall to the bottom of the column, or on top of other pieces already in
  * that column. For an illustration of the board, see:
  *  https://en.wikipedia.org/wiki/Connect_Four
- *
+ *›
  * Board coordinates [row,col] should match with:
  * [2,0][2,1][2,2][2,3]
  * [1,0][1,1][1,2][1,3]
@@ -21,12 +21,14 @@
 **/
 Piezas::Piezas()
 {
+    //initialize size of board
     board.resize(BOARD_ROWS);
     for (auto i = 0; i < board.size(); i++)
     {
         board[i].resize(BOARD_COLS);
     }
 
+    //set board locations to be blank
     for (auto i = 0; i < BOARD_ROWS; i++)
     {
         for (auto i2 = 0; i2 < BOARD_COLS; i2++)
@@ -44,6 +46,7 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+    //copy of constructor for blank board
     board.resize(BOARD_ROWS);
     for (auto i = 0; i < board.size(); i++)
     {
@@ -80,7 +83,7 @@ Piece Piezas::dropPiece(int column)
         if (column > 3 || column < 0)
             return Invalid;
 
-        //No blank pieces
+        //No blank spaces
         for (auto i = 0; i < BOARD_ROWS; i++)
         {
             if (board[i][column] != Blank)
@@ -109,7 +112,7 @@ Piece Piezas::dropPiece(int column)
         if (column > 3 || column < 0)
             return Invalid;
 
-        //No blank pieces
+        //No blank spaces
         for (auto i = 0; i < BOARD_ROWS; i++)
         {
             if (board[i][column] != Blank)
@@ -136,9 +139,11 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
+    //coordinates are out of bounds
     if (row > BOARD_ROWS || row < 0 || column > BOARD_COLS || column < 0)
         return Invalid;
 
+    //return the piece at location
     else
         return board[row][column];
 }
