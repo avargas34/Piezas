@@ -159,7 +159,7 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    int full = 0;
+    int count = 0;
 
     //Check if board is empty
     for (auto i = 0; i < BOARD_ROWS; i++)
@@ -168,19 +168,13 @@ Piece Piezas::gameState()
         {
             if (pieceAt(i, i2) != Blank)
             {
-                full++;
+                count++;
             }
         }
     }
 
     //If game not finished
-    if (full < 12)
-    {
-        return Invalid;
-    }
-
-    //A complete game has been successful
-    else
+    if (count >= 12)
     {
         int curX = 0;
         int curO = 0;
@@ -264,4 +258,8 @@ Piece Piezas::gameState()
         else
             return O;
     }
+
+    else
+        return Invalid;
+    
 }
