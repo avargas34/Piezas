@@ -260,11 +260,12 @@ TEST(PiezasTest, testing_reset2)
 TEST(PiezasTest, invalid_column)
 {
 	Piezas connect4;
+	char inval = '?';
 	bool invalid_piece = false;
 
 	connect4.dropPiece(5);
 
-	if (connect4.dropPiece(0) == Invalid)
+	if (connect4.dropPiece(0) == inval)
 	{
 		invalid_piece = true;
 	}
@@ -275,11 +276,12 @@ TEST(PiezasTest, invalid_column)
 TEST(PiezasTest, invalid_column2)
 {
 	Piezas connect4;
+	char inval = '?';
 	bool invalid_piece = false;
 
 	connect4.dropPiece(-1);
 
-	if (connect4.dropPiece(0) == Invalid)
+	if (connect4.dropPiece(0) == inval)
 	{
 		invalid_piece = true;
 	}
@@ -290,11 +292,12 @@ TEST(PiezasTest, invalid_column2)
 TEST(PiezasTest, invalid_column3)
 {
 	Piezas connect4;
+	char inval = '?';
 	bool invalid_piece = false;
 
 	connect4.dropPiece(99);
 
-	if (connect4.dropPiece(0) == Invalid)
+	if (connect4.dropPiece(0) == inval)
 	{
 		invalid_piece = true;
 	}
@@ -351,4 +354,63 @@ TEST(PiezasTest, invalid_column6)
 	}
 
 	EXPECT_EQ(invalid_piece, true);
+}
+
+TEST(PiezasTest, correct_turn)
+{
+	Piezas connect4;
+	bool correct_player = false;
+
+	if (connect4.turn == X)
+	{
+		correct_player = true;
+	}
+
+	EXPECT_EQ(correct_player, true);
+}
+
+TEST(PiezasTest, correct_turn2)
+{
+	Piezas connect4;
+	bool correct_player = false;
+	connect4.dropPiece(0);
+
+	if (connect4.turn == O)
+	{
+		correct_player = true;
+	}
+
+	EXPECT_EQ(correct_player, true);
+}
+
+TEST(PiezasTest, correct_turn3)
+{
+	Piezas connect4;
+	bool correct_player = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+
+	if (connect4.turn == X)
+	{
+		correct_player = true;
+	}
+
+	EXPECT_EQ(correct_player, true);
+}
+
+TEST(PiezasTest, correct_turn3)
+{
+	Piezas connect4;
+	bool correct_player = false;
+	
+	connect4.dropPiece(0);
+	connect4.dropPiece(6);
+
+	if (connect4.turn == X)
+	{
+		correct_player = true;
+	}
+
+	EXPECT_EQ(correct_player, true);
 }
