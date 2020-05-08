@@ -160,7 +160,7 @@ Piece Piezas::gameState()
     int adjOhori = 0;
     int adjXcol = 0;
     int adjOcol = 0;
-
+/*
     //checking horizontally
     for (auto i = 0; i < BOARD_ROWS; i++)
     {
@@ -182,7 +182,7 @@ Piece Piezas::gameState()
                 curO = adjOhori;
         }
     }
-/*
+*/
     //checking vertically
     for (auto i = 0; i < BOARD_ROWS - 1; i++)
     {
@@ -204,7 +204,7 @@ Piece Piezas::gameState()
                 curO = adjOcol;
         }
     }
-*/
+
     //X won
     if (curX > curO)
         return X;
