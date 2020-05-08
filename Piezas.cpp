@@ -160,7 +160,7 @@ Piece Piezas::gameState()
     int adjOhori = 0;
     int adjXcol = 0;
     int adjOcol = 0;
-/*
+    /*
     //checking horizontally
     for (auto i = 0; i < BOARD_ROWS; i++)
     {
@@ -214,6 +214,5 @@ Piece Piezas::gameState()
         return O;
 
     //tie game
-    if (curX == curO)
-        return Blank;
+    return Blank;
 }
