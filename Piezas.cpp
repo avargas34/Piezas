@@ -183,6 +183,28 @@ Piece Piezas::gameState()
         }
     }
 
+    //checking vertically
+    for (auto i = 0; i < BOARD_ROWS; i++)
+    {
+        adjXcol = 0;
+        adjOcol = 0;
+
+        for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
+        {
+            if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'X')
+                adjXcol++;
+
+            else if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'O')
+                adjOcol++;
+
+            if (adjXcol > curX)
+                curX = adjXcol;
+
+            if (adjOcol > curO)
+                curO = adjOcol;
+        }
+    }
+
     //X won
     if (curX > curO)
         return X;
