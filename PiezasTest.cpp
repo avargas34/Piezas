@@ -437,7 +437,7 @@ TEST(PiezasTest, incomplete_game3)
 
 	EXPECT_EQ(game, true);
 }
-*/
+
 TEST(PiezasTest, tie_game)
 {
 	Piezas connect4;
@@ -511,20 +511,34 @@ TEST(PiezasTest, tie_game3)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	connect4.dropPiece(0);
+	if(connect4.gameState() == tie);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
+*/
+
+TEST(PiezasTest, full_game)
+{
+	Piezas connect4;
+	bool game = false;
+
 	connect4.dropPiece(0);
 	connect4.dropPiece(1);
-	connect4.dropPiece(1);
-	connect4.dropPiece(2);
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 	connect4.dropPiece(0);
 	connect4.dropPiece(1);
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == tie);
+	if(connect4.gameState() == Blank);
 	{
 		game = true;
 	}
