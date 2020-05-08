@@ -379,7 +379,7 @@ TEST(PiezasTest, incomplete_game)
 	Piezas connect4;
 	bool game = false;
 
-	if(connect4.gameState() == Invalid);
+	if(connect4.gameState() == Invalid)
 	{
 		game = true;
 	}
@@ -394,7 +394,7 @@ TEST(PiezasTest, incomplete_game2)
 
 	connect4.dropPiece(2);
 
-	if(connect4.gameState() == Invalid);
+	if(connect4.gameState() == Invalid)
 	{
 		game = true;
 	}
@@ -412,7 +412,7 @@ TEST(PiezasTest, incomplete_game3)
 	connect4.dropPiece(2);
 	connect4.dropPiece(2);
 
-	if(connect4.gameState() == Invalid);
+	if(connect4.gameState() == Invalid)
 	{
 		game = true;
 	}
@@ -438,7 +438,7 @@ TEST(PiezasTest, tie_game)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == Blank);
+	if(connect4.gameState() == Blank)
 	{
 		game = true;
 	}
@@ -464,7 +464,7 @@ TEST(PiezasTest, tie_game2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == Blank);
+	if(connect4.gameState() == Blank)
 	{
 		game = true;
 	}
@@ -490,7 +490,7 @@ TEST(PiezasTest, tie_game3)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == Blank);
+	if(connect4.gameState() == Blank)
 	{
 		game = true;
 	}
@@ -516,7 +516,7 @@ TEST(PiezasTest, hori_game_X_win)
 	connect4.dropPiece(1);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == X);
+	if(connect4.gameState() == X)
 	{
 		game = true;
 	}
@@ -542,7 +542,7 @@ TEST(PiezasTest, hori_game_X_win2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == X);
+	if(connect4.gameState() == X)
 	{
 		game = true;
 	}
@@ -568,7 +568,7 @@ TEST(PiezasTest, hori_game_O_win)
 	connect4.dropPiece(3);
 	connect4.dropPiece(2);
 
-	if(connect4.gameState() == O);
+	if(connect4.gameState() == O)
 	{
 		game = true;
 	}
@@ -594,7 +594,7 @@ TEST(PiezasTest, hori_game_O_win2)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == O);
+	if(connect4.gameState() == O)
 	{
 		game = true;
 	}
@@ -620,7 +620,7 @@ TEST(PiezasTest, col_game_X_win)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == X);
+	if(connect4.gameState() == X)
 	{
 		game = true;
 	}
@@ -646,7 +646,7 @@ TEST(PiezasTest, col_game_X_win2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(1);
 
-	if(connect4.gameState() == X);
+	if(connect4.gameState() == X)
 	{
 		game = true;
 	}
@@ -672,7 +672,7 @@ TEST(PiezasTest, col_game_O_win)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == O);
+	if(connect4.gameState() == O)
 	{
 		game = true;
 	}
@@ -698,7 +698,7 @@ TEST(PiezasTest, col_game_O_win2)
 	connect4.dropPiece(1);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == O);
+	if(connect4.gameState() == O)
 	{
 		game = true;
 	}
