@@ -182,7 +182,7 @@ Piece Piezas::gameState()
                 curO = adjOhori;
         }
     }
- /*   
+   
     //checking vertically
     for (auto i = 0; i < BOARD_ROWS - 1; i++)
     {
@@ -204,7 +204,6 @@ Piece Piezas::gameState()
                 curO = adjOcol;
         }
     }
-    */
 
     //X won
     if (curX > curO)

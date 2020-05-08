@@ -620,7 +620,7 @@ TEST(PiezasTest, col_game_X_win)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == X)
+	if(connect4.gameState() == Blank)
 	{
 		game = true;
 	}
