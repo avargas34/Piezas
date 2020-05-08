@@ -519,9 +519,37 @@ TEST(PiezasTest, tie_game3)
 	EXPECT_EQ(game, true);
 }
 
-TEST(PiezasTest, full_game)
+TEST(PiezasTest, hori_game_X_win)
 {
 	Piezas connect4;
+	char win = 'X';
+	bool game = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(0);
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+	connect4.dropPiece(2);
+	connect4.dropPiece(1);
+	connect4.dropPiece(3);
+	connect4.dropPiece(1);
+	connect4.dropPiece(3);
+
+	if(connect4.gameState() == win);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
+
+TEST(PiezasTest, hori_game_X_win2)
+{
+	Piezas connect4;
+	char win = 'X';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -529,15 +557,69 @@ TEST(PiezasTest, full_game)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
 	connect4.dropPiece(1);
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
-	connect4.dropPiece(0);
-	connect4.dropPiece(1);
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == Blank);
+	if(connect4.gameState() == win);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
+
+TEST(PiezasTest, hori_game_O_win)
+{
+	Piezas connect4;
+	char win = 'O';
+	bool game = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(2);
+	connect4.dropPiece(0);
+	connect4.dropPiece(3);
+	connect4.dropPiece(1);
+	connect4.dropPiece(3);
+	connect4.dropPiece(3);
+	connect4.dropPiece(2);
+
+	if(connect4.gameState() == win);
+	{
+		game = true;
+	}
+
+	EXPECT_EQ(game, true);
+}
+
+TEST(PiezasTest, hori_game_O_win2)
+{
+	Piezas connect4;
+	char win = 'O';
+	bool game = false;
+
+	connect4.dropPiece(0);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(1);
+	connect4.dropPiece(0);
+	connect4.dropPiece(2);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
+	connect4.dropPiece(3);
+
+	if(connect4.gameState() == win);
 	{
 		game = true;
 	}

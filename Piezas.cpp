@@ -144,93 +144,54 @@ Piece Piezas::pieceAt(int row, int column)
 Piece Piezas::gameState()
 {
     //Check if board is empty, return invalid if it is
-    for(auto i = 0; i < BOARD_ROWS; i++)
+    for (auto i = 0; i < BOARD_ROWS; i++)
     {
-        for(auto i2 = 0; i2 < BOARD_COLS; i2++)
+        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
         {
-            if(board[i][i2] == Blank)
+            if (board[i][i2] == Blank)
                 return Invalid;
         }
     }
 
-    return Blank;
-
-/*
     //Only runs if complete game
     int curX = 0;
     int curO = 0;
-    int curXhori = 0;
-    int curOhori = 0;
-    int curXcol = 0;
-    int curOcol = 0;
     int adjXhori = 0;
     int adjOhori = 0;
     int adjXcol = 0;
     int adjOcol = 0;
 
-    for (auto i = 0; i < BOARD_ROWS - 1; i++)
-    {
-        curXhori = adjXhori;
-        curOhori = adjOhori;
-
-        adjXhori = 0;
-        adjOhori = 0;
-
-        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
-        {
-            if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'X')
-            {
-                adjXhori++;
-            }
-
-            else if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'O')
-            {
-                adjOhori++;
-            }
-        }
-    }
-
+    //checking horizontally
     for (auto i = 0; i < BOARD_ROWS; i++)
     {
-        if (curXcol < adjXcol)
-            curXcol = adjXcol;
-
-        else if (curOcol < adjOcol)
-            curOcol = adjOcol;
-
-        adjXcol = 0;
-        adjOcol = 0;
+        adjXhori = 0;
+        adjOhori = 0;
 
         for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
         {
             if (board[i][i2] == board[i][i2 + 1] && board[i][i2] == 'X')
-            {
-                adjXcol++;
-            }
+                adjXhori++;
 
             else if (board[i][i2] == board[i][i2 + 1] && board[i][i2] == 'O')
-            {
-                adjOcol++;
-            }
+                adjOhori++;
+
+            if (adjXhori > curX)
+                curX = adjXhori;
+
+            if (adjOhori > curO)
+                curO = adjOhori;
         }
     }
 
-    curX = curXhori;
-    curO = curOhori;
-
-    if (curX < curXcol)
-        curX = curXcol;
-
-    if (curO < curOcol)
-        curO = curOcol;
-
-    if (curX == curO)
-        return Blank;
-
-    else if (curX > curO)
+    //X won
+    if (curX > curO)
         return X;
 
-    else
+    //O won
+    if (curO > curX)
         return O;
-        */
+
+    //tie game
+    if (curX == curO)
+        return Blank;
 }
