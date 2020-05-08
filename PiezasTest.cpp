@@ -388,7 +388,7 @@ TEST(PiezasTest, correct_turn3)
 
 	EXPECT_EQ(O, connect4.dropPiece(1));
 }
-/*
+
 TEST(PiezasTest, incomplete_game)
 {
 	Piezas connect4;
@@ -518,7 +518,6 @@ TEST(PiezasTest, tie_game3)
 
 	EXPECT_EQ(game, true);
 }
-*/
 
 TEST(PiezasTest, full_game)
 {
