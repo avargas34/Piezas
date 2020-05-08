@@ -678,7 +678,7 @@ TEST(PiezasTest, col_game_X_win2)
 		game = true;
 	}
 
-	EXPECT_EQ(game, true);
+	ASSERT_EQ(game, true);
 }
 
 TEST(PiezasTest, col_game_O_win)
