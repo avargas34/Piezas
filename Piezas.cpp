@@ -153,10 +153,16 @@ Piece Piezas::gameState()
         for(auto i2 = 0; i2 < BOARD_COLS; i2++)
         {
             if(board[i][i2] == Blank)
+            {
                 return Invalid;
+                break;
+            }
         }
     }
 
+    return Blank;
+
+/*
     //Only runs if complete game
     int curX = 0;
     int curO = 0;
@@ -233,4 +239,5 @@ Piece Piezas::gameState()
 
     else
         return O;
+        */
 }
