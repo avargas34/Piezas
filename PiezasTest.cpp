@@ -601,7 +601,7 @@ TEST(PiezasTest, hori_game_O_win2)
 
 	EXPECT_EQ(game, true);
 }
-
+/*
 TEST(PiezasTest, col_game_X_win)
 {
 	Piezas connect4;
@@ -705,3 +705,4 @@ TEST(PiezasTest, col_game_O_win2)
 
 	EXPECT_EQ(game, true);
 }
+*/
