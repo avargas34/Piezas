@@ -175,6 +175,9 @@ Piece Piezas::gameState()
 
     //Checking if a full game is complete
     if (full == false)
+        return Invalid;
+
+    else
     {
         int curX = 0;
         int curO = 0;
@@ -252,7 +255,4 @@ Piece Piezas::gameState()
         else
             return O;
     }
-
-    else
-        return Invalid;
 }
