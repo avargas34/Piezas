@@ -673,12 +673,12 @@ TEST(PiezasTest, col_game_X_win2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(1);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == X);
 	{
 		game = true;
 	}
 
-	ASSERT_EQ(game, true);
+	EXPECT_EQ(game, true);
 }
 
 TEST(PiezasTest, col_game_O_win)
