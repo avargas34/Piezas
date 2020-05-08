@@ -510,6 +510,10 @@ TEST(PiezasTest, tie_game3)
 	connect4.dropPiece(1);
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
+	connect4.dropPiece(0);
+	connect4.dropPiece(1);
+	connect4.dropPiece(2);
+	connect4.dropPiece(3);
 
 	if(connect4.gameState() == tie);
 	{
