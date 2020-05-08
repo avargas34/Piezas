@@ -184,12 +184,12 @@ Piece Piezas::gameState()
     }
 
     //checking vertically
-    for (auto i = 0; i < BOARD_ROWS; i++)
+    for (auto i = 0; i < BOARD_ROWS - 1; i++)
     {
         adjXcol = 0;
         adjOcol = 0;
 
-        for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
+        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
         {
             if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'X')
                 adjXcol++;
