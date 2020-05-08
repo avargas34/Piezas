@@ -148,9 +148,9 @@ Piece Piezas::pieceAt(int row, int column)
 Piece Piezas::gameState()
 {
     //Check if board is empty, return invalid if it is
-    for (auto i = 0; i < BOARD_ROWS; i++)
+    for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (auto i2 = 0; i2 < BOARD_COLS; i2++)
+        for (int i2 = 0; i2 < BOARD_COLS; i2++)
         {
             if (board[i][i2] == Blank)
             {
