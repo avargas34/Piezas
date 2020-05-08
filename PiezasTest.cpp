@@ -22,14 +22,13 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, blank_board_check)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool blank_board = true;
 
 	for (auto i = 0; i < BOARD_ROWS; i++)
 	{
 		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
 		{
-			if (connect4.pieceAt(i, i2) != blank)
+			if (connect4.pieceAt(i, i2) != Blank)
 			{
 				blank_board = false;
 				break;
@@ -43,12 +42,11 @@ TEST(PiezasTest, blank_board_check)
 TEST(PiezasTest, valid_location)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool board_piece = true;
 	int i = 0;
 	int i2 = 0;
 
-	if (connect4.pieceAt(i, i2) == blank)
+	if (connect4.pieceAt(i, i2) == Blank)
 	{
 		board_piece = true;
 	}
@@ -59,12 +57,11 @@ TEST(PiezasTest, valid_location)
 TEST(PiezasTest, valid_location2)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool board_piece = true;
 	int i = 2;
 	int i2 = 0;
 
-	if (connect4.pieceAt(i, i2) == blank)
+	if (connect4.pieceAt(i, i2) == Blank)
 	{
 		board_piece = true;
 	}
@@ -75,12 +72,11 @@ TEST(PiezasTest, valid_location2)
 TEST(PiezasTest, valid_location3)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool board_piece = true;
 	int i = 2;
 	int i2 = 3;
 
-	if (connect4.pieceAt(i, i2) == blank)
+	if (connect4.pieceAt(i, i2) == Blank)
 	{
 		board_piece = true;
 	}
@@ -91,12 +87,11 @@ TEST(PiezasTest, valid_location3)
 TEST(PiezasTest, invalid_location)
 {
 	Piezas connect4;
-	char invalid = '?';
 	bool board_piece = true;
 	int i = 1;
 	int i2 = -4;
 
-	if (connect4.pieceAt(i, i2) == invalid)
+	if (connect4.pieceAt(i, i2) == Invalid)
 	{
 		board_piece = true;
 	}
@@ -107,12 +102,11 @@ TEST(PiezasTest, invalid_location)
 TEST(PiezasTest, invalid_location2)
 {
 	Piezas connect4;
-	char invalid = '?';
 	bool board_piece = true;
 	int i = -1;
 	int i2 = 3;
 
-	if (connect4.pieceAt(i, i2) == invalid)
+	if (connect4.pieceAt(i, i2) == Invalid)
 	{
 		board_piece = true;
 	}
@@ -123,12 +117,11 @@ TEST(PiezasTest, invalid_location2)
 TEST(PiezasTest, invalid_location3)
 {
 	Piezas connect4;
-	char invalid = '?';
 	bool board_piece = true;
 	int i = -2;
 	int i2 = 8;
 
-	if (connect4.pieceAt(i, i2) == invalid)
+	if (connect4.pieceAt(i, i2) == Invalid)
 	{
 		board_piece = true;
 	}
@@ -139,7 +132,6 @@ TEST(PiezasTest, invalid_location3)
 TEST(PiezasTest, drop_1_game_piece1)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool blank_board = true;
 
 	connect4.dropPiece(2);
@@ -148,7 +140,7 @@ TEST(PiezasTest, drop_1_game_piece1)
 	{
 		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
 		{
-			if (connect4.pieceAt(i, i2) != blank)
+			if (connect4.pieceAt(i, i2) != Blank)
 			{
 				blank_board = false;
 				break;
@@ -162,7 +154,6 @@ TEST(PiezasTest, drop_1_game_piece1)
 TEST(PiezasTest, drop_1_game_piece2)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool blank_board = true;
 
 	connect4.dropPiece(0);
@@ -171,7 +162,7 @@ TEST(PiezasTest, drop_1_game_piece2)
 	{
 		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
 		{
-			if (connect4.pieceAt(i, i2) != blank)
+			if (connect4.pieceAt(i, i2) != Blank)
 			{
 				blank_board = false;
 				break;
@@ -185,7 +176,6 @@ TEST(PiezasTest, drop_1_game_piece2)
 TEST(PiezasTest, drop_1_game_piece3)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool blank_board = true;
 
 	connect4.dropPiece(3);
@@ -194,7 +184,7 @@ TEST(PiezasTest, drop_1_game_piece3)
 	{
 		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
 		{
-			if (connect4.pieceAt(i, i2) != blank)
+			if (connect4.pieceAt(i, i2) != Blank)
 			{
 				blank_board = false;
 				break;
@@ -208,7 +198,6 @@ TEST(PiezasTest, drop_1_game_piece3)
 TEST(PiezasTest, testing_reset)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool blank_board = true;
 
 	connect4.dropPiece(1);
@@ -219,7 +208,7 @@ TEST(PiezasTest, testing_reset)
 	{
 		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
 		{
-			if (connect4.pieceAt(i, i2) != blank)
+			if (connect4.pieceAt(i, i2) != Blank)
 			{
 				blank_board = false;
 				break;
@@ -233,7 +222,6 @@ TEST(PiezasTest, testing_reset)
 TEST(PiezasTest, testing_reset2)
 {
 	Piezas connect4;
-	char blank = ' ';
 	bool blank_board = true;
 
 	connect4.dropPiece(0);
@@ -246,7 +234,7 @@ TEST(PiezasTest, testing_reset2)
 	{
 		for (auto i2 = 0; i2 < BOARD_COLS; i2++)
 		{
-			if (connect4.pieceAt(i, i2) != blank)
+			if (connect4.pieceAt(i, i2) != Blank)
 			{
 				blank_board = false;
 				break;
@@ -260,10 +248,9 @@ TEST(PiezasTest, testing_reset2)
 TEST(PiezasTest, invalid_column)
 {
 	Piezas connect4;
-	char inval = '?';
 	bool invalid_piece = false;
 
-	if (connect4.dropPiece(5) == inval)
+	if (connect4.dropPiece(5) == Invalid)
 	{
 		invalid_piece = true;
 	}
@@ -274,10 +261,9 @@ TEST(PiezasTest, invalid_column)
 TEST(PiezasTest, invalid_column2)
 {
 	Piezas connect4;
-	char inval = '?';
 	bool invalid_piece = false;
 
-	if (connect4.dropPiece(-1) == inval)
+	if (connect4.dropPiece(-1) == Invalid)
 	{
 		invalid_piece = true;
 	}
@@ -288,12 +274,11 @@ TEST(PiezasTest, invalid_column2)
 TEST(PiezasTest, invalid_column3)
 {
 	Piezas connect4;
-	char inval = '?';
 	bool invalid_piece = false;
 
 	connect4.dropPiece(1);
 
-	if (connect4.dropPiece(99) == inval)
+	if (connect4.dropPiece(99) == Invalid)
 	{
 		invalid_piece = true;
 	}
@@ -392,10 +377,9 @@ TEST(PiezasTest, correct_turn3)
 TEST(PiezasTest, incomplete_game)
 {
 	Piezas connect4;
-	char inval = '?';
 	bool game = false;
 
-	if(connect4.gameState() == inval);
+	if(connect4.gameState() == Invalid);
 	{
 		game = true;
 	}
@@ -406,12 +390,11 @@ TEST(PiezasTest, incomplete_game)
 TEST(PiezasTest, incomplete_game2)
 {
 	Piezas connect4;
-	char inval = '?';
 	bool game = false;
 
 	connect4.dropPiece(2);
 
-	if(connect4.gameState() == inval);
+	if(connect4.gameState() == Invalid);
 	{
 		game = true;
 	}
@@ -422,7 +405,6 @@ TEST(PiezasTest, incomplete_game2)
 TEST(PiezasTest, incomplete_game3)
 {
 	Piezas connect4;
-	char inval = '?';
 	bool game = false;
 
 	connect4.dropPiece(2);
@@ -430,7 +412,7 @@ TEST(PiezasTest, incomplete_game3)
 	connect4.dropPiece(2);
 	connect4.dropPiece(2);
 
-	if(connect4.gameState() == inval);
+	if(connect4.gameState() == Invalid);
 	{
 		game = true;
 	}
@@ -441,7 +423,6 @@ TEST(PiezasTest, incomplete_game3)
 TEST(PiezasTest, tie_game)
 {
 	Piezas connect4;
-	char tie = ' ';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -457,7 +438,7 @@ TEST(PiezasTest, tie_game)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == tie);
+	if(connect4.gameState() == Blank);
 	{
 		game = true;
 	}
@@ -468,7 +449,6 @@ TEST(PiezasTest, tie_game)
 TEST(PiezasTest, tie_game2)
 {
 	Piezas connect4;
-	char tie = ' ';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -484,7 +464,7 @@ TEST(PiezasTest, tie_game2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == tie);
+	if(connect4.gameState() == Blank);
 	{
 		game = true;
 	}
@@ -495,7 +475,6 @@ TEST(PiezasTest, tie_game2)
 TEST(PiezasTest, tie_game3)
 {
 	Piezas connect4;
-	char tie = ' ';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -511,7 +490,7 @@ TEST(PiezasTest, tie_game3)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == tie);
+	if(connect4.gameState() == Blank);
 	{
 		game = true;
 	}
@@ -522,7 +501,6 @@ TEST(PiezasTest, tie_game3)
 TEST(PiezasTest, hori_game_X_win)
 {
 	Piezas connect4;
-	char win = 'X';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -538,7 +516,7 @@ TEST(PiezasTest, hori_game_X_win)
 	connect4.dropPiece(1);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == X);
 	{
 		game = true;
 	}
@@ -549,7 +527,6 @@ TEST(PiezasTest, hori_game_X_win)
 TEST(PiezasTest, hori_game_X_win2)
 {
 	Piezas connect4;
-	char win = 'X';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -565,7 +542,7 @@ TEST(PiezasTest, hori_game_X_win2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == X);
 	{
 		game = true;
 	}
@@ -576,7 +553,6 @@ TEST(PiezasTest, hori_game_X_win2)
 TEST(PiezasTest, hori_game_O_win)
 {
 	Piezas connect4;
-	char win = 'O';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -592,7 +568,7 @@ TEST(PiezasTest, hori_game_O_win)
 	connect4.dropPiece(3);
 	connect4.dropPiece(2);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == O);
 	{
 		game = true;
 	}
@@ -603,7 +579,6 @@ TEST(PiezasTest, hori_game_O_win)
 TEST(PiezasTest, hori_game_O_win2)
 {
 	Piezas connect4;
-	char win = 'O';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -619,7 +594,7 @@ TEST(PiezasTest, hori_game_O_win2)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == O);
 	{
 		game = true;
 	}
@@ -630,7 +605,6 @@ TEST(PiezasTest, hori_game_O_win2)
 TEST(PiezasTest, col_game_X_win)
 {
 	Piezas connect4;
-	char win = 'X';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -646,7 +620,7 @@ TEST(PiezasTest, col_game_X_win)
 	connect4.dropPiece(3);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == X);
 	{
 		game = true;
 	}
@@ -657,7 +631,6 @@ TEST(PiezasTest, col_game_X_win)
 TEST(PiezasTest, col_game_X_win2)
 {
 	Piezas connect4;
-	char win = 'O';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -673,7 +646,7 @@ TEST(PiezasTest, col_game_X_win2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(1);
 
-	if(connect4.gameState() == O);
+	if(connect4.gameState() == X);
 	{
 		game = true;
 	}
@@ -684,7 +657,6 @@ TEST(PiezasTest, col_game_X_win2)
 TEST(PiezasTest, col_game_O_win)
 {
 	Piezas connect4;
-	char win = 'O';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -700,7 +672,7 @@ TEST(PiezasTest, col_game_O_win)
 	connect4.dropPiece(2);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == O);
 	{
 		game = true;
 	}
@@ -711,7 +683,6 @@ TEST(PiezasTest, col_game_O_win)
 TEST(PiezasTest, col_game_O_win2)
 {
 	Piezas connect4;
-	char win = 'O';
 	bool game = false;
 
 	connect4.dropPiece(0);
@@ -727,7 +698,7 @@ TEST(PiezasTest, col_game_O_win2)
 	connect4.dropPiece(1);
 	connect4.dropPiece(3);
 
-	if(connect4.gameState() == win);
+	if(connect4.gameState() == O);
 	{
 		game = true;
 	}
