@@ -80,7 +80,7 @@ Piece Piezas::dropPiece(int column)
         turn = O;
 
         //invalid location
-        if (column > 4 || column < 0)
+        if (column > 3 || column < 0)
             return Invalid;
 
         //No blank spaces
@@ -91,9 +91,6 @@ Piece Piezas::dropPiece(int column)
                 board[i][column] = X;
                 return X;
             }
-
-            else
-            return Blank;
         }
     }
 
@@ -103,7 +100,7 @@ Piece Piezas::dropPiece(int column)
         turn = X;
 
         //invalid location
-        if (column > 4 || column < 0)
+        if (column > 3 || column < 0)
             return Invalid;
 
         //No blank spaces
@@ -114,11 +111,10 @@ Piece Piezas::dropPiece(int column)
                 board[i][column] = O;
                 return O;
             }
-
-            else
-            return Blank;
         }
     }
+
+    return Blank;
 }
 
 /**
