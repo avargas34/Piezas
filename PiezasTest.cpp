@@ -673,7 +673,7 @@ TEST(PiezasTest, col_game_X_win2)
 	connect4.dropPiece(2);
 	connect4.dropPiece(1);
 
-	if(connect4.gameState() == X);
+	if(connect4.gameState() == O);
 	{
 		game = true;
 	}
