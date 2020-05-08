@@ -166,7 +166,7 @@ Piece Piezas::gameState()
     {
         for (auto i2 = 0; i2 < BOARD_COLS; i2++)
         {
-            if (pieceAt(i, i2) == Blank)
+            if (board[i][i2] = Blank)
             {
                 full = false;
             }
@@ -255,5 +255,4 @@ Piece Piezas::gameState()
 
     else
         return Invalid;
-    
 }
