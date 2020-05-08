@@ -86,20 +86,14 @@ Piece Piezas::dropPiece(int column)
         //No blank spaces
         for (auto i = 0; i < BOARD_ROWS; i++)
         {
-            if (board[i][column] != Blank)
-            {
-                return Blank;
-            }
-        }
-
-        //set current player piece
-        for (auto i = 0; i < BOARD_ROWS; i++)
-        {
             if (board[i][column] == Blank)
             {
                 board[i][column] = X;
                 return X;
             }
+
+            else
+            return Blank;
         }
     }
 
@@ -115,20 +109,14 @@ Piece Piezas::dropPiece(int column)
         //No blank spaces
         for (auto i = 0; i < BOARD_ROWS; i++)
         {
-            if (board[i][column] != Blank)
-            {
-                return Blank;
-            }
-        }
-
-        //set current player piece
-        for (auto i = 0; i < BOARD_ROWS; i++)
-        {
             if (board[i][column] == Blank)
             {
                 board[i][column] = O;
                 return O;
             }
+
+            else
+            return Blank;
         }
     }
 }
