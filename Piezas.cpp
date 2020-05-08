@@ -28,7 +28,7 @@ Piezas::Piezas()
         board[i].resize(BOARD_COLS);
     }
 
-    //set board locations to be blank
+    //setting board locations to be blank
     for (auto i = 0; i < BOARD_ROWS; i++)
     {
         for (auto i2 = 0; i2 < BOARD_COLS; i2++)
@@ -46,7 +46,7 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-    //copy of constructor for blank board
+    //copy of constructor for a new blank board
     board.resize(BOARD_ROWS);
     for (auto i = 0; i < board.size(); i++)
     {
@@ -153,53 +153,63 @@ Piece Piezas::gameState()
         }
     }
 
-    //Only runs if complete game
+    //counters list for adj hits
     int curX = 0;
     int curO = 0;
-    int adjXhori = 0;
-    int adjOhori = 0;
-    int adjXcol = 0;
-    int adjOcol = 0;
+    int adjXhori;
+    int adjOhori;
+    int adjXcol;
+    int adjOcol;
 
     //checking horizontally
     for (auto i = 0; i < BOARD_ROWS; i++)
     {
+        //set initial values for adj count
         adjXhori = 0;
         adjOhori = 0;
 
         for (auto i2 = 0; i2 < BOARD_COLS - 1; i2++)
         {
+            //check the horixontal adj for X
             if (board[i][i2] == board[i][i2 + 1] && board[i][i2] == 'X')
                 adjXhori++;
 
+            //check the horizontal adj for O
             else if (board[i][i2] == board[i][i2 + 1] && board[i][i2] == 'O')
                 adjOhori++;
 
+            //Replace new count if greater than previous X adj count
             if (adjXhori > curX)
                 curX = adjXhori;
 
+            //Replace new count if greater than previous O adj count
             if (adjOhori > curO)
                 curO = adjOhori;
         }
     }
-   
+
     //checking vertically
     for (auto i2 = 0; i2 < BOARD_COLS; i2++)
     {
+        //set initial values for adj count
         adjXcol = 0;
         adjOcol = 0;
 
         for (auto i = 0; i < BOARD_ROWS - 1; i++)
         {
+            //check the vertical adj for X
             if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'X')
                 adjXcol++;
 
+            //check the vertical adj for O
             else if (board[i][i2] == board[i + 1][i2] && board[i][i2] == 'O')
                 adjOcol++;
 
+            //Replace new count if greater than previous X adj count
             if (adjXcol > curX)
                 curX = adjXcol;
 
+            //Replace new count if greater than previous O adj count
             if (adjOcol > curO)
                 curO = adjOcol;
         }
