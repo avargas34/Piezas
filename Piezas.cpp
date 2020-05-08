@@ -80,7 +80,7 @@ Piece Piezas::dropPiece(int column)
         turn = O;
 
         //invalid location
-        if (column > 3 || column < 0)
+        if (column > 4 || column < 0)
             return Invalid;
 
         //No blank spaces
@@ -103,7 +103,7 @@ Piece Piezas::dropPiece(int column)
         turn = X;
 
         //invalid location
-        if (column > 3 || column < 0)
+        if (column > 4 || column < 0)
             return Invalid;
 
         //No blank spaces
